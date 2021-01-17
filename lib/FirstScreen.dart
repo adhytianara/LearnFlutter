@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'SecondScreen.dart';
 
 class FirstScreen extends StatelessWidget {
-  String message = 'Hello from First Screen!';
+  final TextEditingController _controller = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -30,13 +30,18 @@ class FirstScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text('Hello World'),
+            Container(
+                width: 100.0,
+                child: TextField(
+                  controller: _controller,
+                )),
             RaisedButton(
               color: Colors.blue,
               textColor: Colors.white,
               child: Text('Pindah Screen'),
               onPressed: () {
                 Navigator.push(context, MaterialPageRoute(builder: (context) {
-                  return SecondScreen(message);
+                  return SecondScreen(_controller.text);
                 }));
               },
             )
