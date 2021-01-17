@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 
+import 'SecondScreen.dart';
+
 class FirstScreen extends StatelessWidget {
+  String message = 'Hello from First Screen!';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,6 +34,11 @@ class FirstScreen extends StatelessWidget {
               color: Colors.blue,
               textColor: Colors.white,
               child: Text('Pindah Screen'),
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return SecondScreen(message);
+                }));
+              },
             )
           ],
         ),

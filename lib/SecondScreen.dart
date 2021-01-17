@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 
 class SecondScreen extends StatelessWidget {
+  final String message;
+
+  SecondScreen(this.message);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -8,8 +12,17 @@ class SecondScreen extends StatelessWidget {
         title: Text('Second Screen'),
       ),
       body: Center(
-        child: RaisedButton(
-          child: Text('Kembali'),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: <Widget>[
+            Text(message),
+            RaisedButton(
+              child: Text('Kembali'),
+              onPressed: () {
+                Navigator.pop(context);
+              },
+            ),
+          ],
         ),
       ),
     );
