@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:learn_flutter/FirstScreen.dart';
 
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -12,33 +12,6 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: FirstScreen(),
-    );
-  }
-}
-
-class FirstScreen extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        leading: IconButton(
-          icon: Icon(Icons.menu, color: Colors.white,),
-        ),
-        title: Text("First Screen"),
-        actions: <Widget>[
-          IconButton(
-            icon: Icon(Icons.search, color: Colors.white,),
-          )
-        ],
-      ),
-
-      body: Center(
-        child: Text("Hello World!"),
-      ),
-
-      floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.add),
-      ),
     );
   }
 }
