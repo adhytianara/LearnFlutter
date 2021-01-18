@@ -14,7 +14,7 @@ class MainScreen extends StatelessWidget {
           return FlatButton(
             onPressed: () {
               Navigator.push(context, MaterialPageRoute(builder: (context) {
-                return DetailScreen();
+                return DetailScreen(place: place,);
               }));
             },
             child: Card(
