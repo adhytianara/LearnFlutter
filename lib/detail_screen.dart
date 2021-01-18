@@ -18,7 +18,18 @@ class DetailScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
-            Image.asset(place.imageAsset),
+            Stack(
+              children: <Widget>[
+                Image.asset(place.imageAsset),
+                SafeArea(
+                  child: IconButton(
+                      icon: Icon(Icons.arrow_back),
+                      onPressed: () {
+                        Navigator.pop(context);
+                      }),
+                )
+              ],
+            ),
             Container(
                 margin: EdgeInsets.only(top: 16),
                 child: Text(
