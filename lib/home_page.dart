@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:learn_flutter/destination_details.dart';
 import 'package:learn_flutter/model/destination.dart';
 
 class HomePage extends StatelessWidget {
@@ -33,11 +34,21 @@ class HomePage extends StatelessWidget {
                       padding: EdgeInsets.symmetric(vertical: 5, horizontal: 8),
                       scrollDirection: Axis.horizontal,
                       children: destinationList.map((destination) {
-                        return Padding(
-                          padding: const EdgeInsets.all(8),
-                          child: ClipRRect(
-                              borderRadius: BorderRadius.circular(10),
-                              child: Image.asset(destination.imageAssets)),
+                        return FlatButton(
+                          padding: EdgeInsets.all(0),
+                          onPressed: () {
+                            Navigator.push(context,
+                                MaterialPageRoute(builder: (context) {
+                              return DestinationDetails(
+                                  destination: destination);
+                            }));
+                          },
+                          child: Padding(
+                            padding: const EdgeInsets.all(8),
+                            child: ClipRRect(
+                                borderRadius: BorderRadius.circular(10),
+                                child: Image.asset(destination.imageAssets)),
+                          ),
                         );
                       }).toList(),
                     ),

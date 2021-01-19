@@ -121,6 +121,6 @@ var destinationList = [
           "keindahan bawah laut dari pulau tikus",
       imageAssets: 'images/pulautikus.jpg',
       price:
-          "Biaya penyebrangan: Rp 200.000/orang dengan jumlah minimal 10 orang untuk setiap keberangkatan",
+          "Biaya penyebrangan: Rp 200.000/orang",
       location: "10 mil laut dari Kota Bengkulu")
 ];
