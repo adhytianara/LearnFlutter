@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:learn_flutter/destination_details.dart';
+import 'package:learn_flutter/event_details.dart';
 import 'package:learn_flutter/model/bengkulu_province.dart';
 import 'package:learn_flutter/model/destination.dart';
 import 'package:learn_flutter/model/event.dart';
@@ -90,7 +91,7 @@ class HomePage extends StatelessWidget {
                       Expanded(
                           flex: 2,
                           child: Padding(
-                            padding: const EdgeInsets.only(left: 8.0),
+                            padding: const EdgeInsets.only(left: 8.0, right: 8),
                             child: Column(
                               children: <Widget>[
                                 Text(
@@ -132,7 +133,6 @@ class HomePage extends StatelessWidget {
             Container(
               color: Colors.white,
               margin: EdgeInsets.only(top: 10, bottom: 10),
-              padding: EdgeInsets.symmetric(horizontal: 16),
               child: Column(
                 children: <Widget>[
                   Padding(
@@ -149,33 +149,40 @@ class HomePage extends StatelessWidget {
                       children: eventList.map((event) {
                     return Column(
                       children: <Widget>[
-                        Row(
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: <Widget>[
-                            Expanded(
-                                flex: 2,
-                                child: ClipRRect(
-                                  borderRadius: BorderRadius.circular(10),
-                                  child: Image.asset(
-                                    event.imageAssets,
-                                  ),
-                                )),
-                            Expanded(
-                                flex: 2,
-                                child: Column(
-                                  children: <Widget>[
-                                    Padding(
-                                      padding: const EdgeInsets.only(left: 8.0),
-                                      child: Text(
-                                        event.description,
-                                        textAlign: TextAlign.justify,
-                                        maxLines: 5,
-                                        style: TextStyle(fontSize: 16),
-                                      ),
+                        FlatButton(
+                          onPressed: () {
+                            Navigator.push(context, MaterialPageRoute(builder: (context) {
+                              return EventDetails(event: event);
+                            }));
+                          },
+                          child: Row(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: <Widget>[
+                              Expanded(
+                                  flex: 2,
+                                  child: ClipRRect(
+                                    borderRadius: BorderRadius.circular(10),
+                                    child: Image.asset(
+                                      event.imageAssets,
                                     ),
-                                  ],
-                                )),
-                          ],
+                                  )),
+                              Expanded(
+                                  flex: 2,
+                                  child: Column(
+                                    children: <Widget>[
+                                      Padding(
+                                        padding: const EdgeInsets.only(left: 8.0),
+                                        child: Text(
+                                          event.description,
+                                          textAlign: TextAlign.justify,
+                                          maxLines: 5,
+                                          style: TextStyle(fontSize: 16, color: Colors.black54),
+                                        ),
+                                      ),
+                                    ],
+                                  )),
+                            ],
+                          ),
                         ),
                         SizedBox(
                           height: 25,
