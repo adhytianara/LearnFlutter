@@ -11,7 +11,7 @@ class ProvinsiBengkulu {
       "  Pada masa inilah Sukarno berkenalan dengan Fatmawati yang kelak menjadi istrinya. Setelah kemerdekaan Indonesia,"
       "  Bengkulu menjadi keresidenan dalam provinsi Sumatra Selatan. Baru sejak tanggal 18 November 1968"
       "  ditingkatkan statusnya menjadi provinsi ke-26 (termuda sebelum Timor Timur).";
-  String populasi = " - Total	1.904.793\n- Kepadatan	96,25 jiwa/km2";
+  String populasi = "- Total	1.904.793\n- Kepadatan	96,25 jiwa/km2";
 
   ProvinsiBengkulu();
 }

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:learn_flutter/destination_details.dart';
 import 'package:learn_flutter/model/destination.dart';
 import 'package:learn_flutter/model/bengkulu_province.dart';
+import 'package:learn_flutter/province_details.dart';
 
 class HomePage extends StatelessWidget {
   @override
@@ -109,7 +110,7 @@ class HomePage extends StatelessWidget {
                                               MaterialPageRoute(
                                                   builder: (context) {
                                             return Scaffold(
-                                                body: Text("asdhg"));
+                                                body: ProvinceDetails());
                                           }));
                                         },
                                         child: Text(
