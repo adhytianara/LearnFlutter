@@ -24,12 +24,15 @@ class HomePage extends StatelessWidget {
               child: Column(
                 children: <Widget>[
                   Padding(
-                    padding: const EdgeInsets.only(top: 10),
-                    child: Text(
-                      "Destinasi wisata",
-                      style: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
+                    padding: const EdgeInsets.only(left: 16, top: 10),
+                    child: Align(
+                      alignment: Alignment.centerLeft,
+                      child: Text(
+                        "Destinasi wisata",
+                        style: TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.blue),
                       ),
                     ),
                   ),
@@ -70,12 +73,15 @@ class HomePage extends StatelessWidget {
               child: Column(
                 children: <Widget>[
                   Padding(
-                    padding: const EdgeInsets.only(top: 10, bottom: 15),
-                    child: Text(
-                      "Provinsi Bengkulu",
-                      style: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
+                    padding: const EdgeInsets.only(left: 10, top: 10, bottom: 15),
+                    child: Align(
+                      alignment: Alignment.centerLeft,
+                      child: Text(
+                        "Provinsi Bengkulu",
+                        style: TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.blue),
                       ),
                     ),
                   ),
@@ -136,12 +142,15 @@ class HomePage extends StatelessWidget {
               child: Column(
                 children: <Widget>[
                   Padding(
-                    padding: const EdgeInsets.only(top: 10, bottom: 15),
-                    child: Text(
-                      "Event",
-                      style: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
+                    padding: const EdgeInsets.only(top: 10, bottom: 15, left: 16),
+                    child: Align(
+                      alignment: Alignment.centerLeft,
+                      child: Text(
+                        "Event",
+                        style: TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.blue),
                       ),
                     ),
                   ),
@@ -151,7 +160,8 @@ class HomePage extends StatelessWidget {
                       children: <Widget>[
                         FlatButton(
                           onPressed: () {
-                            Navigator.push(context, MaterialPageRoute(builder: (context) {
+                            Navigator.push(context,
+                                MaterialPageRoute(builder: (context) {
                               return EventDetails(event: event);
                             }));
                           },
@@ -171,12 +181,15 @@ class HomePage extends StatelessWidget {
                                   child: Column(
                                     children: <Widget>[
                                       Padding(
-                                        padding: const EdgeInsets.only(left: 8.0),
+                                        padding:
+                                            const EdgeInsets.only(left: 8.0),
                                         child: Text(
                                           event.description,
                                           textAlign: TextAlign.justify,
                                           maxLines: 5,
-                                          style: TextStyle(fontSize: 16, color: Colors.black54),
+                                          style: TextStyle(
+                                              fontSize: 16,
+                                              color: Colors.black54),
                                         ),
                                       ),
                                     ],

@@ -26,7 +26,6 @@ class EventDetails extends StatelessWidget {
                           onPressed: () {
                             Navigator.pop(context);
                           }),
-                      FavoriteButton(),
                     ],
                   ),
                 )
@@ -50,6 +49,7 @@ class EventDetails extends StatelessWidget {
                   borderRadius: BorderRadius.circular(40),
                   child: Image.asset(event.imageAssets)),
             ),
+            FavoriteButton(),
             Container(
               padding: EdgeInsets.all(16),
               child: Text(
@@ -78,7 +78,8 @@ class _FavoriteButtonState extends State<FavoriteButton> {
     return IconButton(
       icon: Icon(
         isFavorite ? Icons.favorite : Icons.favorite_border,
-        color: Colors.red,
+        color: Colors.blue,
+        size: 35,
       ),
       onPressed: () {
         setState(() {

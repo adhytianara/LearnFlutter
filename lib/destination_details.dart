@@ -24,7 +24,6 @@ class DestinationDetails extends StatelessWidget {
                           onPressed: () {
                             Navigator.pop(context);
                           }),
-                      FavoriteButton(),
                     ],
                   ),
                 )
@@ -35,7 +34,7 @@ class DestinationDetails extends StatelessWidget {
               color: Color(0xffc2c2c2),
             ),
             Container(
-                margin: EdgeInsets.only(top: 15),
+                margin: EdgeInsets.only(top: 25),
                 child: Text(
                   destination.name,
                   textAlign: TextAlign.center,
@@ -48,6 +47,7 @@ class DestinationDetails extends StatelessWidget {
                   borderRadius: BorderRadius.circular(40),
                   child: Image.asset(destination.imageAssets)),
             ),
+            FavoriteButton(),
             Container(
               margin: EdgeInsets.symmetric(vertical: 16),
               child: Row(
@@ -98,7 +98,8 @@ class _FavoriteButtonState extends State<FavoriteButton> {
     return IconButton(
       icon: Icon(
         isFavorite ? Icons.favorite : Icons.favorite_border,
-        color: Colors.red,
+        color: Colors.blue,
+        size: 35,
       ),
       onPressed: () {
         setState(() {
