@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:learn_flutter/destination_details.dart';
-import 'package:learn_flutter/model/destination.dart';
 import 'package:learn_flutter/model/bengkulu_province.dart';
+import 'package:learn_flutter/model/destination.dart';
+import 'package:learn_flutter/model/event.dart';
 import 'package:learn_flutter/province_details.dart';
 
 class HomePage extends StatelessWidget {
@@ -68,7 +69,7 @@ class HomePage extends StatelessWidget {
               child: Column(
                 children: <Widget>[
                   Padding(
-                    padding: const EdgeInsets.only(top: 10, bottom: 5),
+                    padding: const EdgeInsets.only(top: 10, bottom: 15),
                     child: Text(
                       "Provinsi Bengkulu",
                       style: TextStyle(
@@ -77,56 +78,111 @@ class HomePage extends StatelessWidget {
                       ),
                     ),
                   ),
-                  Card(
-                    child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: <Widget>[
-                        Expanded(
-                            flex: 1,
-                            child: Image.asset(
-                              'images/bengkulu.png',
-                              height: 140,
-                            )),
-                        Expanded(
-                            flex: 2,
-                            child: Padding(
-                              padding: const EdgeInsets.only(left: 8.0),
-                              child: Column(
-                                children: <Widget>[
-                                  Text(
-                                    provinsiBengkulu.sejarah,
-                                    textAlign: TextAlign.justify,
-                                    maxLines: 6,
-                                    style: TextStyle(fontSize: 16),
-                                  ),
-                                  Align(
-                                      alignment: Alignment.centerLeft,
-                                      child: FlatButton(
-                                        padding: EdgeInsets.all(0),
-                                        materialTapTargetSize:
-                                            MaterialTapTargetSize.shrinkWrap,
-                                        onPressed: () {
-                                          Navigator.push(context,
-                                              MaterialPageRoute(
-                                                  builder: (context) {
-                                            return Scaffold(
-                                                body: ProvinceDetails());
-                                          }));
-                                        },
-                                        child: Text(
-                                          "Lihat Detail",
-                                          style: TextStyle(
-                                            color: Colors.blue,
-                                            fontSize: 16,
-                                          ),
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      Expanded(
+                          flex: 1,
+                          child: Image.asset(
+                            'images/bengkulu.png',
+                            height: 140,
+                          )),
+                      Expanded(
+                          flex: 2,
+                          child: Padding(
+                            padding: const EdgeInsets.only(left: 8.0),
+                            child: Column(
+                              children: <Widget>[
+                                Text(
+                                  provinsiBengkulu.sejarah,
+                                  textAlign: TextAlign.justify,
+                                  maxLines: 6,
+                                  style: TextStyle(fontSize: 16),
+                                ),
+                                Align(
+                                    alignment: Alignment.centerLeft,
+                                    child: FlatButton(
+                                      padding: EdgeInsets.all(0),
+                                      materialTapTargetSize:
+                                          MaterialTapTargetSize.shrinkWrap,
+                                      onPressed: () {
+                                        Navigator.push(context,
+                                            MaterialPageRoute(
+                                                builder: (context) {
+                                          return Scaffold(
+                                              body: ProvinceDetails());
+                                        }));
+                                      },
+                                      child: Text(
+                                        "... selengkapnya",
+                                        style: TextStyle(
+                                          color: Colors.blue,
+                                          fontSize: 16,
                                         ),
-                                      ))
-                                ],
-                              ),
-                            )),
-                      ],
+                                      ),
+                                    ))
+                              ],
+                            ),
+                          )),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+            Container(
+              color: Colors.white,
+              margin: EdgeInsets.only(top: 10, bottom: 10),
+              padding: EdgeInsets.symmetric(horizontal: 16),
+              child: Column(
+                children: <Widget>[
+                  Padding(
+                    padding: const EdgeInsets.only(top: 10, bottom: 15),
+                    child: Text(
+                      "Event",
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                   ),
+                  Column(
+                      children: eventList.map((event) {
+                    return Column(
+                      children: <Widget>[
+                        Row(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: <Widget>[
+                            Expanded(
+                                flex: 2,
+                                child: ClipRRect(
+                                  borderRadius: BorderRadius.circular(10),
+                                  child: Image.asset(
+                                    event.imageAssets,
+                                  ),
+                                )),
+                            Expanded(
+                                flex: 2,
+                                child: Column(
+                                  children: <Widget>[
+                                    Padding(
+                                      padding: const EdgeInsets.only(left: 8.0),
+                                      child: Text(
+                                        event.description,
+                                        textAlign: TextAlign.justify,
+                                        maxLines: 5,
+                                        style: TextStyle(fontSize: 16),
+                                      ),
+                                    ),
+                                  ],
+                                )),
+                          ],
+                        ),
+                        SizedBox(
+                          height: 25,
+                        )
+                      ],
+                    );
+                  }).toList()),
                 ],
               ),
             )
